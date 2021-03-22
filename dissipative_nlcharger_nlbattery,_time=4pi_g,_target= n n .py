@@ -9,7 +9,7 @@ Original file is located at
 # Optimization of Dissipative Qubit Reset
 """
 
-pip install krotov
+
 
 # NBVAL_IGNORE_OUTPUT
 import qutip
@@ -391,7 +391,7 @@ def eigenvalues(A):
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
 # you won't get slightly different results in the optimization when
 # running this on different systems
-for n in range (11, 31):
+for n in range (40, 101):
   L=liouvillian(omega, g, gamma, beta, n, 0.5*n)
   rho_q_trg = np.array(qutip.basis(n,0)*qutip.basis(n,0).dag())
   rho_T_trg = np.array(qutip.basis(n,n-1)*qutip.basis(n,n-1).dag())
