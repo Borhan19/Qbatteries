@@ -9,7 +9,6 @@ Original file is located at
 # Optimization of Dissipative Qubit Reset
 """
 
-pip install krotov
 
 # NBVAL_IGNORE_OUTPUT
 import qutip
