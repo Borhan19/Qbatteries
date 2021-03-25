@@ -391,7 +391,7 @@ def eigenvalues(A):
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
 # you won't get slightly different results in the optimization when
 # running this on different systems
-for n in range (11, 31):
+for n in range (10, 50):
   L=liouvillian(omega, g, gamma, beta, n, 0.5*n)
   rho_q_trg = np.array(qutip.basis(n,0)*qutip.basis(n,0).dag())
   rho_T_trg = np.array(qutip.basis(n,n-1)*qutip.basis(n,n-1).dag())
@@ -443,10 +443,12 @@ for n in range (11, 31):
   print("Final ergotropy is ", Ergotropy[nt-1])
   plt.plot(time,Energy,label='Energy')
   plt.plot(time,Ergotropy,label='Ergotropy')
+  plt.title("n= ",n)
   plt.xlabel("time")
   plt.ylabel("Energy, Ergotropy")
   plt.legend()  
   plt.show()
+  plt.savefig("EnergyvsErgotropy" + str(n) +".png", format="PNG")
 
 """## Simulate the dynamics of the optimized field
 
