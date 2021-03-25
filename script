@@ -7,5 +7,5 @@
 #SBATCH --time 72:00:00 
 #SBATCH - -mail-type = END 
 #SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
-module load 7cells
-mpirun simulation <7cells.py
+module load simulation
+mpirun simulation <hi.py
