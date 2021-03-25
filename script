@@ -1,11 +1,11 @@
-#!/apl/tryton/python/3.5.6/bin/python3.5
+#!/bin/python3
 #SBATCH -J task1 
 #SBATCH -p batch 
-#SBATCH -N 5
+#SBATCH -N 1
 #SBATCH --ntasks-per-node 24 
-#SBATCH --mem 20000 
+#SBATCH --mem 1000 
 #SBATCH --time 72:00:00 
 #SBATCH --mail-type=END 
 #SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
-module load tryton/python3
-mpirun tryton/python3 <hi.py
+module load simulation
+mpirun simulation <hi.py
