@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/apl/tryton/python/3.5.6/bin/python3.5
 #SBATCH -J task1 
 #SBATCH -p batch 
 #SBATCH -N 5
