@@ -380,6 +380,7 @@ def plot_iterations(opt_result):
     ax.plot(tlist,np.transpose(EEnergy))
     plt.legend()
     plt.show(fig)
+    plt.savefig('ElectricField7cells.png')
 
 # NBVAL_IGNORE_OUTPUT
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
@@ -459,6 +460,7 @@ plt.xlabel("time")
 plt.ylabel("Energy, Ergotropy")
 plt.legend()  
 plt.show()
+
 
 """## Simulate the dynamics of the optimized field
 
