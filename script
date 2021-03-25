@@ -8,4 +8,4 @@
 #SBATCH --mail-type=END 
 #SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
 module load hi
-mpirun simulation hi.py
+mpirun hi <hi.py
