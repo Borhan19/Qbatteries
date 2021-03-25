@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/bash
 #SBATCH -J task1 
 #SBATCH -p batch 
 #SBATCH -N 1
@@ -7,5 +7,5 @@
 #SBATCH --time 72:00:00 
 #SBATCH --mail-type=END 
 #SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
-module load hi
-mpirun hi hi.py
+module load tryton/python3
+python3 <hi.py
