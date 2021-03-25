@@ -8,15 +8,7 @@ Original file is located at
 
 # Optimization of Dissipative Qubit Reset
 """
-#!/bin/python3
-#SBATCH -J task1 
-#SBATCH -p batch 
-#SBATCH -N 5
-#SBATCH --ntasks-per-node 24 
-#SBATCH --mem 20000 
-#SBATCH --time 72:00:00 
-#SBATCH - -mail-type = END 
-#SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
+
 
 
 # NBVAL_IGNORE_OUTPUT
