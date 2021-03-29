@@ -43,11 +43,10 @@ def H2_coeff(t, args):
 
 N=50
 omega=1
-Xaa=2
 Xbb=0.09
 g=0.2*omega
 F=0.1*omega
-HA=omega*qt.create(2)*qt.destroy(2)- Xaa/2*(qt.create(2)*qt.destroy(2)*qt.create(2)*qt.destroy(2))
+HA=omega/2*(-qt.sigmaz()+qt.qeye(2))
 HB=omega*qt.create(N)*qt.destroy(N)- Xbb/2*(qt.create(N)*qt.destroy(N)*qt.create(N)*qt.destroy(N))
 HAB=g*(qt.tensor(qt.create(N),qt.destroy(N))+qt.tensor(qt.destroy(N), qt.create(N)))
 H1=qt.tensor(F*qt.create(2),qt.qeye(2))
