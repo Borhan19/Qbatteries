@@ -90,7 +90,7 @@ axs[0].legend()
 
 #For anaharmonicities
 
-N=30
+N=50
 omega=1
 Xaa=2
 Xbb=0.09
@@ -136,12 +136,12 @@ plt.title("Entropy")
 plt.legend()
 plt.show()
 
-for alpha in np.arange(0,100,5):  
+for alpha in np.arange(0,10,0.5):  
   Modulus=np.zeros(10000)
   for i in range (0,10000):
     A=np.array(output.states[i])
     FinalRho=np.trace(A.reshape(N,N,N,N), axis1=0, axis2=2)
-    Cat=np.array(qt.coherent(N,alpha)+qt.coherent(N,-alpha))
+    Cat=np.array(qt.coherent(N,alpha)-qt.coherent(N,-alpha))
     Cat=Cat/(np.sqrt(np.dot(np.transpose(Cat),Cat)))
     if alpha==0:
       Cat=np.array(qt.coherent(N,alpha))
