@@ -38,44 +38,6 @@ def H1_coeff(t, args):
 def H2_coeff(t, args):
       return  np.exp(t*1j*omega)
 
-"""2 anaharmonic oscillators (with dissipation)"""
-
-fig, axs = plt.subplots(1,2)     
-N=2
-omega=1
-g=0.2*omega
-F=0.1*omega
-HA=omega*qt.create(N)*qt.destroy(N)
-HB=omega*qt.create(N)*qt.destroy(N)
-HAB=g*(qt.tensor(qt.create(N),qt.destroy(N))+qt.tensor(qt.destroy(N), qt.create(N)))
-H1=qt.tensor(F*qt.create(N),qt.qeye(N))
-H2=qt.tensor(F*qt.destroy(N),qt.qeye(N))
-H0=qt.tensor(HA, qt.qeye(N))+qt.tensor(qt.qeye(N),HB)+HAB
-H=[H0, [H1, H1_coeff], [H2, H2_coeff]]
-t=np.linspace(0,30*math.pi/g,10000)
-psi0=qt.basis(N**2,0)
-output = qt.mesolve(H, psi0, t, [qt.tensor(np.sqrt(0.05*omega)*qt.destroy(N),qt.qeye(N))], [])
-Energy=np.zeros(10000)
-Ergotropy=np.zeros(10000)
-v=eigenvectors(HB)
-for i in range(0,10000):
-  A=np.array(output.states[i])
-  FinalRho=np.trace(A.reshape(N,N,N,N), axis1=0, axis2=2)
-  Rho_f=np.zeros((N,N))
-  for j in range(0,N):
-      Rho_f=eigenvalues(FinalRho)[N-1-j]*v[:,j]+Rho_f
-  Energy[i-1]=np.real(np.matrix.trace(omega*np.dot(np.array(HB),FinalRho)))
-  Ergotropy[i-1]=-np.real(np.matrix.trace(omega*np.dot(np.array(HB),(Rho_f-FinalRho)))) 
-
-  
-  
-
-axs[0].plot(t,Energy/omega,label="Energy/omega")
-axs[0].plot(t,Ergotropy/omega,label="Ergotropy/omega")
-axs[0].set_xlabel("Time")
-axs[0].set_ylabel("Ergotropy/omega & energy/omega")
-axs[0].set_title("Giovanetti")
-axs[0].legend()
 
 #For anaharmonicities
 
@@ -111,12 +73,12 @@ for i in range(0,10000):
   EntropyB[i-1]=qt.entropy_vn(qt.Qobj(FinalRho),2)
   
   
-
-axs[1].plot(t,Energy/omega,label="Energy/omega")
-axs[1].plot(t,Ergotropy/omega,label="Ergotropy/omega")
-axs[1].set_xlabel("Time")
-axs[1].set_title("Anaharmonicities")
-axs[1].legend()
+plt.figure()
+plt.plot(t,Energy/omega,label="Energy/omega")
+plt.plot(t,Ergotropy/omega,label="Ergotropy/omega")
+plt.xlabel("Time")
+plt.title("Anaharmonicities")
+plt.legend()
 
 plt.figure()
 plt.plot(t,EntropyB)
@@ -130,7 +92,7 @@ for alpha in np.arange(0,100,5):
   for i in range (0,10000):
     A=np.array(output.states[i])
     FinalRho=np.trace(A.reshape(2,N,2,N), axis1=0, axis2=2)
-    Cat=np.array(qt.coherent(N,alpha)+qt.coherent(N,-alpha))
+    Cat=np.array(qt.coherent(N,alpha)-qt.coherent(N,-alpha))
     Cat=Cat/(np.sqrt(np.dot(np.transpose(Cat),Cat)))
     if alpha==0:
       Cat=np.array(qt.coherent(N,alpha))
