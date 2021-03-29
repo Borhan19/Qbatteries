@@ -1,5 +1,3 @@
-pip install krotov
-
 import qutip as qt
 import numpy as np
 import scipy
