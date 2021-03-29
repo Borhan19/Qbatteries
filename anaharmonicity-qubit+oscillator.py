@@ -43,7 +43,7 @@ def H2_coeff(t, args):
 
 N=50
 omega=1
-Xbb=0.09
+Xbb=1
 g=0.2*omega
 F=0.1*omega
 HA=omega/2*(-qt.sigmaz()+qt.qeye(2))
