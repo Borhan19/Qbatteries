@@ -41,18 +41,18 @@ def H2_coeff(t, args):
 
 N=50
 omega=1
-Xbb=1
+Xbb=0.09
 g=0.2*omega
 F=0.1*omega
 HA=omega/2*(-qt.sigmaz()+qt.qeye(2))
 HB=omega*qt.create(N)*qt.destroy(N)- Xbb/2*(qt.create(N)*qt.destroy(N)*qt.create(N)*qt.destroy(N))
 HAB=g*(qt.tensor(qt.create(2),qt.destroy(N))+qt.tensor(qt.destroy(2), qt.create(N)))
-H1=qt.tensor(F*qt.create(2),qt.qeye(2))
-H2=qt.tensor(F*qt.destroy(2),qt.qeye(2))
+H1=qt.tensor(F*qt.create(2),qt.qeye(N))
+H2=qt.tensor(F*qt.destroy(2),qt.qeye(N))
 H0=qt.tensor(HA, qt.qeye(N))+qt.tensor(qt.qeye(2),HB)+HAB
 H=[H0, [H1, H1_coeff], [H2, H2_coeff]]
 t=np.linspace(0,30*math.pi/g,10000)
-psi0=qt.basis(N**2,0)
+psi0=qt.basis(2*N,0)
 output = qt.mesolve(H, psi0, t, [qt.tensor(np.sqrt(0.05*omega)*qt.destroy(2),qt.qeye(N))], [])
 Energy=np.zeros(10000)
 Ergotropy=np.zeros(10000)
@@ -101,5 +101,6 @@ for alpha in np.arange(0,100,5):
   plt.xlabel("Time")
   plt.title("Fidelity")
   plt.show()
-  plt.savefig("Fidelity for alpha", str(alpha) + ".png", format="PNG")
+  plt.savefig("Fidelity for alpha" + str(alpha) + ".png", format="PNG")
+
 
