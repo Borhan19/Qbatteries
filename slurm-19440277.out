@@ -1,0 +1,30 @@
+ 'tryton/binutils/2.34' load complete.
+ 'tryton/compiler/gcc/7.4' load complete.
+ 'tryton/python3/3.5.6' load complete.
+
+Loading tryton/python3/3.5.6
+  Loading requirement: tryton/binutils/2.34 tryton/compiler/gcc/7.4
+No handles with labels found to put in legend.
+<stdin>:93: RuntimeWarning: invalid value encountered in true_divide
+/users/kdm/borhan/.local/lib/python3.5/site-packages/matplotlib/pyplot.py:514: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`).
+  max_open_warning, RuntimeWarning)
+The plot is for alpha = 0.0
+The plot is for alpha = 0.5
+The plot is for alpha = 1.0
+The plot is for alpha = 1.5
+The plot is for alpha = 2.0
+The plot is for alpha = 2.5
+The plot is for alpha = 3.0
+The plot is for alpha = 3.5
+The plot is for alpha = 4.0
+The plot is for alpha = 4.5
+The plot is for alpha = 5.0
+The plot is for alpha = 5.5
+The plot is for alpha = 6.0
+The plot is for alpha = 6.5
+The plot is for alpha = 7.0
+The plot is for alpha = 7.5
+The plot is for alpha = 8.0
+The plot is for alpha = 8.5
+The plot is for alpha = 9.0
+The plot is for alpha = 9.5
