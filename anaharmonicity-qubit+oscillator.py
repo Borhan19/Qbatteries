@@ -84,7 +84,7 @@ plt.title("Entropy")
 plt.legend()
 plt.show()
 
-for alpha in np.arange(0,10,0.5):  
+for alpha in np.arange(0,3,0.1):  
   Modulus=np.zeros(10000)
   for i in range (0,10000):
     A=np.array(output.states[i])
@@ -101,6 +101,6 @@ for alpha in np.arange(0,10,0.5):
   plt.xlabel("Time")
   plt.title("Fidelity")
   plt.show()
-  plt.savefig("Fidelity for alpha" + str(alpha) + "qubit+oscillator.png", format="PNG")
+  plt.savefig("NewFidelity for alpha" + str(alpha) + "qubit+oscillator.png", format="PNG")
 
 
