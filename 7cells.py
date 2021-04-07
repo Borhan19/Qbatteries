@@ -181,7 +181,7 @@ def liouvillian(omega, g, gamma, beta):
     L1 = qutip.liouvillian(H=H1)
 
     # Shift the qubit and TLS into resonance by default
-    eps0 = lambda t, args: 5
+    eps0 = lambda t, args: 1
     return [L0, [L1, eps0]]
 
 
@@ -460,6 +460,7 @@ plt.xlabel("time")
 plt.ylabel("Energy, Ergotropy")
 plt.legend()  
 plt.show()
+plt.savefig('EnergyvsErgotropy7cells.png')
 
 
 """## Simulate the dynamics of the optimized field
