@@ -9,6 +9,7 @@ Original file is located at
 # Optimization of Dissipative Qubit Reset
 """
 
+pip install krotov
 
 # NBVAL_IGNORE_OUTPUT
 import qutip
@@ -172,7 +173,7 @@ def liouvillian(omega, g, gamma, beta):
     L1 = qutip.liouvillian(H=H1)
 
     # Shift the qubit and TLS into resonance by default
-    eps0 = lambda t, args: 2
+    eps0 = lambda t, args: 1
     return [L0, [L1, eps0]]
 
 
@@ -396,8 +397,6 @@ opt_result = krotov.optimize_pulses(
 )
 
 plot_iterations(opt_result)
-
-
 
 opt_result
 
