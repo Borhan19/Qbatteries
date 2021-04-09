@@ -181,7 +181,7 @@ def liouvillian(omega, g, gamma, beta):
     L1 = qutip.liouvillian(H=H1)
 
     # Shift the qubit and TLS into resonance by default
-    eps0 = lambda t, args: 1
+    eps0 = lambda t, args: 5
     return [L0, [L1, eps0]]
 
 
