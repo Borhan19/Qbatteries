@@ -9,8 +9,6 @@ Original file is located at
 # Optimization of Dissipative Qubit Reset
 """
 
-pip install krotov
-
 # NBVAL_IGNORE_OUTPUT
 import qutip
 import numpy as np
@@ -371,7 +369,7 @@ def plot_iterations(opt_result):
     
     ax.plot(tlist,np.transpose(EEnergy))
     plt.legend()
-    plt.show(fig)
+    fig.savefig('ElectricField5cells.png')
 
 # NBVAL_IGNORE_OUTPUT
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
@@ -437,12 +435,13 @@ for i in range(0,nt):
   time[i]=(T/nt)*i
 
 
-plt.plot(time,Energy,label='Energy')
-plt.plot(time,Ergotropy,label='Ergotropy')
-plt.xlabel("time")
-plt.ylabel("Energy, Ergotropy")
-plt.legend()  
-plt.show()
+fig2, ax1 =plt.subplots()
+ax1.plot(time,Energy,label='Energy')
+ax1.plot(time,Ergotropy,label='Ergotropy')
+ax1.set_xlabel("time")
+ax1.set_ylabel("Energy, Ergotropy")
+ax1.legend()  
+fig2.savefig('EnergyvsErgotropy5cells.png')
 
 """## Simulate the dynamics of the optimized field
 
@@ -454,5 +453,6 @@ oscillations between qubit and TLS ground state such that the qubit ground
 state is maximally populated at final time $T$.
 """
 
-print(Ergotropy[nt-1]/Energy[nt-1])
-print(Ergotropy[nt-1])
+file1 = open("Percentage5cells.txt","w")
+file1.write(repr(Ergotropy[nt-1]/Energy[nt-1]))
+file1.close()
