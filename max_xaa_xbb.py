@@ -7,7 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1u1xzP8-CLiLBou-DYYM3oyb9pdXHhndi
 """
 
-pip install krotov
 
 import qutip as qt
 import numpy as np
