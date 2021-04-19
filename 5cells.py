@@ -285,9 +285,7 @@ def print_qubit_error(**args):
     """Utility function writing the qubit error to screen"""
     taus = []
     for state_T in args['fw_states_T']:
-        state_q_T = np.trace(np.array(state_T).reshape(2,2,2,2,2,2,2,2,2,2,2,2), axis1=0, axis2=6)
-        FinalStateB=state_q_T.reshape(32,32)       
-        taus.append(FinalStateB[31, 31].real)
+        taus.append(np.real(np.trace(np.dot(state_T,rho_trg))))
     J_T = 1 - np.average(taus)
     print("    qubit error: %.1e" % J_T)
     return J_T
