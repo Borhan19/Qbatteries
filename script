@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J 6cells
+#SBATCH -J tar01
 #SBATCH -p batch 
 #SBATCH -N 16
 #SBATCH --ntasks-per-node 24 
@@ -8,4 +8,4 @@
 #SBATCH --mail-type=END 
 #SBATCH --mail-user=ricard.ravellrodriguez@phdstud.ug.edu.pl
 module load tryton/python3
-python3 <6cells.py
+python3 <NL-2-target=01.py

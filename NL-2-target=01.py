@@ -388,7 +388,7 @@ def eigenvalues(A):
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
 # you won't get slightly different results in the optimization when
 # running this on different systems
-for n in range (70, 105,5):
+for n in range (91, 103,3):
   L=liouvillian(omega, g, gamma, beta, n)
   rho_q_trg = np.array(qutip.basis(n,0)*qutip.basis(n,0).dag())
   rho_T_trg = np.diag([0, 1])
