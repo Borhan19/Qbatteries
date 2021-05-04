@@ -372,8 +372,7 @@ def plot_iterations(opt_result):
       
     
     ax.plot(tlist,np.transpose(EEnergy))
-    plt.legend()
-    plt.show(fig)
+    fig.savefig('EFieldForn=' + str(n) + "tar=01.png",format="PNG")
 
 from numpy import linalg as npla
 
