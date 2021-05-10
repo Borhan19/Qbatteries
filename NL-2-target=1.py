@@ -375,7 +375,7 @@ def plot_iterations(opt_result):
       
     
     ax.plot(tlist,np.transpose(EEnergy))
-    fig.savefig('EFieldForn=' + str(n) + "tar=1.png", format="PNG")
+    fig.savefig('FinalEFieldForn=' + str(n) + "tar=1.png", format="PNG")
 
 from numpy import linalg as npla
 
@@ -439,12 +439,13 @@ for n in range (70, 105,5):
 
   print("Final energy of the battery is ", Energy[nt-1])
   print("Final ergotropy is ", Ergotropy[nt-1])
-  plt.plot(time,Energy,label='Energy')
-  plt.plot(time,Ergotropy,label='Ergotropy')
-  plt.xlabel("time")
-  plt.ylabel("Energy, Ergotropy")
-  plt.legend()  
-  plt.savefig('n=' + str(n) + "1.png", format="PNG")
+  fig2, bx = plt.subplots()
+  bx.plot(time,Energy,label='Energy')
+  bx.plot(time,Ergotropy,label='Ergotropy')
+  bx.set_xlabel("time")
+  bx.set_ylabel("Energy, Ergotropy")
+  bx.legend()  
+  fig2.savefig('Finaln=' + str(n) + "1.png", format="PNG")
 
 """## Simulate the dynamics of the optimized field
 

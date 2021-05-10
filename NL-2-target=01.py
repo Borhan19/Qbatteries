@@ -372,7 +372,7 @@ def plot_iterations(opt_result):
       
     
     ax.plot(tlist,np.transpose(EEnergy))
-    fig.savefig('EFieldForn=' + str(n) + "tar=01.png",format="PNG")
+    fig.savefig('FinalEFieldForn=' + str(n) + "tar=01.png",format="PNG")
 
 from numpy import linalg as npla
 
@@ -387,7 +387,7 @@ def eigenvalues(A):
 # the DensityMatrixODEPropagator is not sufficiently exact to guarantee that
 # you won't get slightly different results in the optimization when
 # running this on different systems
-for n in range (91, 103,3):
+for n in range (70, 105,5):
   L=liouvillian(omega, g, gamma, beta, n)
   rho_q_trg = np.array(qutip.basis(n,0)*qutip.basis(n,0).dag())
   rho_T_trg = np.diag([0, 1])
@@ -436,12 +436,13 @@ for n in range (91, 103,3):
 
   print("Final energy of the battery is ", Energy[nt-1])
   print("Final ergotropy is ", Ergotropy[nt-1])
-  plt.plot(time,Energy,label='Energy')
-  plt.plot(time,Ergotropy,label='Ergotropy')
-  plt.xlabel("time")
-  plt.ylabel("Energy, Ergotropy")
-  plt.legend()  
-  plt.savefig('n=' + str(n) + "01.png", format="PNG")
+  fig2, bx =plt.subplots()
+  bx.plot(time,Energy,label='Energy')
+  bx.plot(time,Ergotropy,label='Ergotropy')
+  bx.set_xlabel("time")
+  bx.set_ylabel("Energy, Ergotropy")
+  bx.legend()  
+  fig2.savefig('Finaln=' + str(n) + "01.png", format="PNG")
 
 """## Simulate the dynamics of the optimized field
 
