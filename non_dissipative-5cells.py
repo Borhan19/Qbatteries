@@ -248,13 +248,12 @@ plt.legend()
 plt.savefig('Energyvsergotropy5cells-nodissipation.png')
 
 def plot_pulse(pulse, tlist):
-    fig, ax = plt.subplots()
+    fig2, ax = plt.subplots()
     if callable(pulse):
         pulse = np.array([pulse(t, args=None) for t in tlist])
     ax.plot(tlist, pulse)
     ax.set_xlabel('Time')
     ax.set_ylabel('Pulse Amplitude')
-    plt.show(fig)
     fig2.savefig('EFieldfor5cells-nodissipation.png')
 
 plot_pulse(opt_result.optimized_controls[0], tlist)
