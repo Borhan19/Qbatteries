@@ -11,7 +11,6 @@ Original file is located at
 
 """# Optimization of a State-to-State Transfer for a Quantum Charger-Battery Driven by Laser Field Using Krotov's Method"""
 
-pip install krotov
 
 # NBVAL_IGNORE_OUTPUT
 import qutip
@@ -180,7 +179,7 @@ def plot_iterations(opt_result):
 
 H = hamiltonian(omega,ampl0,g)
 pulse_options = {
-    H[1][1]: dict(lambda_a=0.1, update_shape=S)
+    H[1][1]: dict(lambda_a=1, update_shape=S)
   }
 objectives = [
     krotov.Objective(
