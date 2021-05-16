@@ -160,6 +160,7 @@ def plot_iterations(opt_result):
     ax.plot(tlist,np.transpose(EEnergy))
     plt.legend()
     plt.show(fig)
+    fig.savefig('Energyofthefield4cells-nodissipation.png')
     
     
     
@@ -236,15 +237,15 @@ plt.plot(time,Power,label='Power')
 plt.xlabel("Time")
 plt.ylabel("Energy, Ergotropy")
 plt.legend()  
-plt.show()
+plt.savefig('Energyvsergotropy4cells-nodissipation.png')
 
 def plot_pulse(pulse, tlist):
-    fig, ax = plt.subplots()
+    fig2, ax = plt.subplots()
     if callable(pulse):
         pulse = np.array([pulse(t, args=None) for t in tlist])
     ax.plot(tlist, pulse)
     ax.set_xlabel('Time')
     ax.set_ylabel('Pulse Amplitude')
-    plt.show(fig)
+    fig2.savefig('EFieldfor4cells-nodissipation.png')
 
 plot_pulse(opt_result.optimized_controls[0], tlist)
