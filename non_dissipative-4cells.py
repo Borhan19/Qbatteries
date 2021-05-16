@@ -9,8 +9,6 @@ Original file is located at
 # Optimization of a State-to-State Transfer for a Quantum Charger-Battery Driven by Laser Field Using Krotov's Method
 """
 
-pip install krotov
-
 # NBVAL_IGNORE_OUTPUT
 import qutip
 import numpy as np
