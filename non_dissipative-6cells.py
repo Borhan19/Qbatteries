@@ -265,7 +265,6 @@ def plot_pulse(pulse, tlist):
     ax.plot(tlist, pulse)
     ax.set_xlabel('Time')
     ax.set_ylabel('Pulse Amplitude')
-    plt.show(fig)
     fig2.savefig('EFieldfor6cells-nodissipation.png')
 
 plot_pulse(opt_result.optimized_controls[0], tlist)
