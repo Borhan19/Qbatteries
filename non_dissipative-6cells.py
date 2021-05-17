@@ -223,7 +223,6 @@ time=np.zeros(nt)
 Power=np.zeros(nt)
 a=0
 for i in range(0,nt):
-  for i in range(0,nt):
   FinalStateB = np.trace(np.array(optimized_dynamics.states[i]*optimized_dynamics.states[i].dag()).reshape(2,2,2,2,2,2,2,2,2,2,2,2,2,2), axis1=0, axis2=7)
   FinalStateCell1=np.trace(np.array(FinalStateB).reshape(2,32,2,32), axis1=1, axis2=3)
   PreFinalStateCell2=np.trace(np.array(FinalStateB).reshape(2,2,16,2,2,16), axis1=2, axis2=5)
