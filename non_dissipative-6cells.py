@@ -180,7 +180,7 @@ def plot_iterations(opt_result):
 
 H = hamiltonian(omega,ampl0,g)
 pulse_options = {
-    H[1][1]: dict(lambda_a=1, update_shape=S)
+    H[1][1]: dict(lambda_a=0.1, update_shape=S)
   }
 objectives = [
     krotov.Objective(
@@ -249,13 +249,14 @@ for i in range(0,nt):
   time[i]=(T/nt)*i
 
 print(np.argmax(Power))
-plt.plot(time,Energy,label='Energy')
-plt.plot(time,Ergotropy,label='Ergotropy')
-plt.plot(time,Power,label='Power')
-plt.xlabel("Time")
-plt.ylabel("Energy, Ergotropy")
-plt.legend()  
-plt.savefig('Energyvsergotropy6cells-nodissipation.png')
+fig3, axes =plt.subplots()
+axes.plot(time,Energy,label='Energy')
+axes.plot(time,Ergotropy,label='Ergotropy')
+axes.plot(time,Power,label='Power')
+axes.set_xlabel("Time")
+axes.set_ylabel("Energy, Ergotropy")
+axes.legend()  
+fig3.savefig('Energyvsergotropy6cells-nodissipation.png')
 
 def plot_pulse(pulse, tlist):
     fig2, ax = plt.subplots()
