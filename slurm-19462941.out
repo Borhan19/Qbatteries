@@ -1,0 +1,107 @@
+ 'tryton/binutils/2.34' load complete.
+ 'tryton/compiler/gcc/7.4' load complete.
+ 'tryton/python3/3.5.6' load complete.
+
+Loading tryton/python3/3.5.6
+  Loading requirement: tryton/binutils/2.34 tryton/compiler/gcc/7.4
+Quantum object: dims = [[2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2]], shape = (128, 128), type = oper, isherm = True
+Qobj data =
+[[1. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+Quantum object: dims = [[2, 2, 2, 2, 2, 2, 2], [2, 2, 2, 2, 2, 2, 2]], shape = (128, 128), type = oper, isherm = True
+Qobj data =
+[[0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ ...
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]
+ [0. 0. 0. ... 0. 0. 0.]]
+Iteration 0
+    objectives:
+        1:ρ₀[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2] to ρ₁[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2] via [𝓛₀[[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2],[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2]], [𝓛₁[[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2],[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2]], u₁(t)]]
+    adjoint objectives:
+        1:ρ₂[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2] to ρ₃[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2] via [𝓛₂[[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2],[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2]], [𝓛₃[[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2],[2⊗2⊗2⊗2⊗2⊗2⊗2,2⊗2⊗2⊗2⊗2⊗2⊗2]], u₁(t)]]
+    chi_constructor: chis_qubit
+    mu: derivative_wrt_pulse
+    S(t) (ranges): [0.000000, 1.000000]
+    iter_start: 0
+    iter_stop: 20000
+    duration: 8.2 secs (started at 2021-04-29 09:52:07)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 0.00e+00
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): None, None, None
+    fw_states_T norm: 1.000000
+    τ: (5.19e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 1
+    duration: 38.7 secs (started at 2021-04-29 09:52:15)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.02e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.20e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 2
+    duration: 42.2 secs (started at 2021-04-29 09:52:54)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.02e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.19e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 3
+    duration: 42.9 secs (started at 2021-04-29 09:53:36)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.03e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.20e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 4
+    duration: 44.7 secs (started at 2021-04-29 09:54:19)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.04e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.21e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 5
+    duration: 45.9 secs (started at 2021-04-29 09:55:04)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.04e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.20e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 6
+    duration: 46.8 secs (started at 2021-04-29 09:55:50)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.05e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.21e-04:0.00π)
+    qubit error: 1.0e+00
+Iteration 7
+    duration: 47.8 secs (started at 2021-04-29 09:56:36)
+    optimized pulses (ranges): [0.00, 2.00]
+    ∫gₐ(t)dt: 3.06e-07
+    λₐ: 1.00e+00
+    storage (bw, fw, fw0): [1 * ndarray(1000)] (313.4 MB), None, None
+    fw_states_T norm: 1.000000
+    τ: (5.20e-04:0.00π)
+<stdin>:162: RuntimeWarning: overflow encountered in exp
+No handles with labels found to put in legend.
+    qubit error: 1.0e+00

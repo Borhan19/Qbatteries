@@ -91,7 +91,7 @@ with $N_{th} = 1/(e^{\beta \omega_{t}} - 1)$.
 """
 
 omega = 1  # qubit level splitting
-g = 1*omega  # qubit-TLS coupling
+g = 0.2*omega  # qubit-TLS coupling
 gamma = 0.05*omega  # TLS decay rate
 beta = 1000000000  # inverse bath temperature
 T = 4*math.pi/g  # final time
@@ -181,7 +181,7 @@ def liouvillian(omega, g, gamma, beta):
     L1 = qutip.liouvillian(H=H1)
 
     # Shift the qubit and TLS into resonance by default
-    eps0 = lambda t, args: 5
+    eps0 = lambda t, args: 8
     return [L0, [L1, eps0]]
 
 
